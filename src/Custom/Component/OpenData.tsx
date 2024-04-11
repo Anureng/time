@@ -13,7 +13,7 @@ import {
 import { Input } from "../../components/ui/input"
 import { Calendar } from "../../components/ui/calendar"
 import { useCallback, useState } from "react"
-import { CalendarCheck, Clock5, MoveLeft } from "lucide-react"
+import { CalendarCheck, Clock5, MoveLeft, User } from "lucide-react"
 import { Label } from "../../components/ui/label"
 const OpenData = () => {
     const [date, setDate] = useState<Date | undefined>()
@@ -37,7 +37,7 @@ const OpenData = () => {
         <div>
             <Dialog>
                 <DialogTrigger asChild>
-                    <Button variant="outline">Edit Profile</Button>
+                    <Button variant="outline">Click to add Date</Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[900px]  ">
                     <DialogHeader>
@@ -46,7 +46,7 @@ const OpenData = () => {
 
                         </DialogDescription>
                     </DialogHeader>
-                    <div className="flex justify-between ">
+                    <div className="flex justify-between  ">
                         {
                             submit ? (
                                 <>
@@ -87,25 +87,25 @@ const OpenData = () => {
                                 </>
                             )
                         }
-                        <div>
+                        <div className="flex items-center justify-center">
                             {
                                 submit ? (
                                     <>
-                                        <div className="w-full border">
-                                            <div className="border flex items-center justify-center w-full">
+                                        <div className="w-full ">
+                                            <div className=" flex items-center justify-center w-full">
                                                 <img className="w-12 h-12 rounded-full  " src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D" alt="" />
                                             </div>
+                                            <p>You are Scheduled</p>
 
-                                            <div>
-                                                {String(date)}
+                                            <div className="flex items-center">
+                                                <User />  {String(name)}
                                             </div>
 
                                             <div>
-                                                {String(time)}
-                                            </div>
-
-                                            <div>
-                                                {String(name)}
+                                                <p>Fibery Demo</p>
+                                                <div className="flex items-center">
+                                                    <CalendarCheck />        {String(date)}
+                                                </div>
                                             </div>
                                         </div>
                                     </>
