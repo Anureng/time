@@ -34,7 +34,7 @@ const OpenData = () => {
     const Time = ["6:30", "7:00", "7:30", "8:00", "8:30", "9:00", "9:30",]
 
     return (
-        <div>
+        <div className="flex justify-center items-center h-screen">
             <Dialog>
                 <DialogTrigger asChild>
                     <Button variant="outline">Click to add Date</Button>
