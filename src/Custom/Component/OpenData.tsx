@@ -148,7 +148,7 @@ const OpenData = () => {
                                         <div>
                                             {
                                                 time ? (
-                                                    <div className=" w-96 flex flex-col space-y-4 md:overflow-scroll  ">
+                                                    <div className=" w-96 flex flex-col space-y-4   ">
                                                         <p>Enter Details</p>
 
                                                         <div className="flex flex-col space-y-1.5">
