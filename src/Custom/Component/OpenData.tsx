@@ -13,7 +13,7 @@ import {
 import { Input } from "../../components/ui/input"
 import { Calendar } from "../../components/ui/calendar"
 import { useCallback, useState } from "react"
-import { CalendarCheck, Clock5, MoveLeft, User } from "lucide-react"
+import { CalendarCheck, Clock5, Earth, MoveLeft, User, Video } from "lucide-react"
 import { Label } from "../../components/ui/label"
 const OpenData = () => {
     const [date, setDate] = useState<Date | undefined>()
@@ -46,7 +46,7 @@ const OpenData = () => {
 
                         </DialogDescription>
                     </DialogHeader>
-                    <div className="flex justify-between  ">
+                    <div className="flex justify-between flex-col md:flex-row  ">
                         {
                             submit ? (
                                 <>
@@ -54,7 +54,7 @@ const OpenData = () => {
                                 </>
                             ) : (
                                 <>
-                                    <div className={`border-r-2 border-black  ${date ? "w-96" : "w-3/5"}  `}>
+                                    <div className={`md:border-r-2 hidden md:block  border-black  ${date ? "w-96" : "w-3/5"}  `}>
                                         <div className=" p-2">
                                             {
                                                 time && <MoveLeft onClick={handleButtonClick} className=" border  rounded-full  text-blue-600 cursor-pointer" />
@@ -65,8 +65,8 @@ const OpenData = () => {
                                             </div>
                                         </div>
                                         <hr />
-                                        <div className="flex  p-16 space-y-24  justify-between  flex-col">
-                                            <div className="space-y-4">
+                                        <div className="flex  md:p-16  md:space-y-24  justify-between  flex-col">
+                                            <div className="md:space-y-4">
                                                 <p className="text-3xl">Fibery Demo</p>
                                                 <p className="flex items-center space-x-2"><Clock5 size={16} /> 45 min</p>
                                                 {
@@ -91,21 +91,46 @@ const OpenData = () => {
                             {
                                 submit ? (
                                     <>
-                                        <div className="w-full ">
-                                            <div className=" flex items-center justify-center w-full">
+                                        <div className="w-[300px] md:w-[800px]  ">
+                                            <div className="flex items-center justify-center flex-col md:space-y-3 space-y-1">
                                                 <img className="w-12 h-12 rounded-full  " src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D" alt="" />
-                                            </div>
-                                            <p>You are Scheduled</p>
+                                                <p>You are Scheduled</p>
+                                                <p>A calendar inivation has been sent to your email address</p>
+                                                <div className="border p-2 border-black rounded-xl space-y-3">
+                                                    <div className=" flex items-center justify-center w-full">
+                                                    </div>
 
-                                            <div className="flex items-center">
-                                                <User />  {String(name)}
-                                            </div>
+                                                    <div className="md:space-y-2">
+                                                        <p className="font-bold text-lg">Fibery Demo</p>
+                                                        <div className="flex items-center">
+                                                            <CalendarCheck />        {String(date)}
+                                                        </div>
+                                                    </div>
 
-                                            <div>
-                                                <p>Fibery Demo</p>
-                                                <div className="flex items-center">
-                                                    <CalendarCheck />        {String(date)}
+                                                    <div className="flex items-center">
+                                                        <User />  {String(name)}
+                                                    </div>
+
+                                                    <div className="flex items-center">
+                                                        <Earth /> UK , Ireland, Libson Time
+                                                    </div>
+
+                                                    <div className="flex items-center">
+                                                        <Video /> Web conferecing details to flow
+                                                    </div>
+
+
                                                 </div>
+                                                <hr />
+                                                <p className="font-bold">Schedule your own meeting with Calendly for free</p>
+                                                <p>Eliminate the back-and-forth emails for finding time.</p>
+
+                                                <div className="md:space-x-3">
+                                                    <button className="border border-black px-2 py-1 rounded-xl">Sign Up with Google</button>
+                                                    <button className="border border-black px-2 py-1 rounded-xl">Sign Up with Microsoft</button>
+                                                </div>
+
+                                                <p className="text-blue-400">Sign up with work email</p>
                                             </div>
                                         </div>
                                     </>
@@ -123,7 +148,7 @@ const OpenData = () => {
                                         <div>
                                             {
                                                 time ? (
-                                                    <div className=" w-96 flex flex-col space-y-4 ">
+                                                    <div className=" w-96 flex flex-col space-y-4 md:overflow-scroll  ">
                                                         <p>Enter Details</p>
 
                                                         <div className="flex flex-col space-y-1.5">
@@ -238,7 +263,7 @@ const OpenData = () => {
                                                     </div>
                                                 ) : (
                                                     <div className="flex items-center space-x-9">
-                                                        <div className="flex flex-col space-y-32">
+                                                        <div className="flex flex-col md:space-y-32">
                                                             <Calendar
                                                                 mode="single"
                                                                 selected={date}

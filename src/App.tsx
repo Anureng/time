@@ -4,9 +4,14 @@ import './App.css';
 import { Button } from './components/ui/button';
 import OpenData from './Custom/Component/OpenData';
 
+
 function App() {
   return (
-    <OpenData />
+    <>
+
+      <OpenData />
+
+    </>
   );
 }
 
